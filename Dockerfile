@@ -9,4 +9,7 @@ RUN Import-module IISAdministration; \
 
 EXPOSE 8000
 
-VOLUME c:/site
+#VOLUME & COPY Don't mix :)'
+#VOLUME c:/site
+
+COPY ./ContosoUniversity c:/site
