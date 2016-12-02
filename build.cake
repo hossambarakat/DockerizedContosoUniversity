@@ -50,7 +50,10 @@ Task("Publish-Docker-Image")
     .IsDependentOn("Build-WebApp-Docker-Image")
     .Does(() =>
 {
-    DockerLogin(dockerhubUserName,dockerhubPassword,"https://index.docker.io/v1/");
+    DockerLogin(new DockerLoginSettings(){
+        Username = dockerhubUserName,
+        Password = dockerhubPassword
+    },"https://index.docker.io/v1/");
     DockerPush("hossambarakat/dockerdemo");
 });
 
