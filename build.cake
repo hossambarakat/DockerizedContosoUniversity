@@ -5,9 +5,6 @@ var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 var dockerhubUserName = Argument("dockerhubusername","");
 var dockerhubPassword = Argument("dockerhubpassword","");
-//var buildDir = Directory("./bin") + Directory(configuration);
-Information(dockerhubUserName);
-Information(dockerhubPassword);
 
 var solutionFile = "./ContosoUniversity.sln"; 
 
