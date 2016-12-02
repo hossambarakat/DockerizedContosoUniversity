@@ -1,6 +1,7 @@
 version: '2'
 services:
     web:
+      container_name: web
       build:
         context: .
         dockerfile: Dockerfile
@@ -8,11 +9,10 @@ services:
         - "sql"
       ports:
          - "8000:8000"
-      volumes:
-        - ./ContosoUniversity:c:/site
 
     sql:
         image: microsoft/mssql-server-2016-express-windows
+        container_name: sql
         ports:
          - "1433:1433"
         environment:
